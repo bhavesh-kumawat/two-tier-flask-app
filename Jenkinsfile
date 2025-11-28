@@ -14,11 +14,6 @@ pipeline{
             docker_build("two-tier-backend","latest")
             }
         }
-        stage("Tag image"){
-            steps{
-            tag_docker_image("two-tier-backend","latest","DockerHubCred")
-            }
-        }
         stage("Push to DockerHub"){
             steps{
                 docker_push("two-tier-backend", "latest", "DockerHubCred")
