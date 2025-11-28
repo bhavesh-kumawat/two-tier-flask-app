@@ -12,6 +12,10 @@ pipeline{
         stage("Code Build"){
             steps{
             docker_build("two-tier-backend","latest")
+            }
+        }
+        stage("Tag image"){
+            steps{
             tag_docker_image("two-tier-backend","latest","DockerHubCred")
             }
         }
