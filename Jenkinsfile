@@ -6,7 +6,7 @@ pipeline{
         stage("Code clone"){
             steps{
                 sh "whoami"
-            clone("https://github.com/bhavesh-kumawat/two-tier-flask-app.git","main")
+            clone("https://github.com/bhavesh-kumawat/two-tier-flask-app.git","master")
             }
         }
         stage("Code Build"){
